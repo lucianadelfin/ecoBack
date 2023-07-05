@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <!-- Required meta tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+    <link rel="shortcut icon" href="../assets/favicon-32x32.png" type="image/x-icon">
+    <title>login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+       
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <header>
+        <div class="navPrincipal">
+            <div class="navBrand">
+                <a href="../index.html"><img src="../assets/logo.png" alt="Logo de la empresa" /></a>
+            </div>
+            <div class="navTitle">
+                <p>EcoTienda</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./catalogo.html">Catalogo</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+
+        <div id="app" class="container" id="subForm"style="background-color: #80ed99; margin:10px auto; width: 40%; padding: 30px;">
+
+           <!-- <form  id action=""></form>-->
+
+            <div id="" class="mb-3">
+                <div>
+                <label for="" class="form-label">Usuario</label>
+                <input v-model="usuario" type="text" class="form-control" name="">
+                <small id=" emailHelpid" class="form-text text-muted">Help text</small>
+                </div>
+                <div class="mb-3">
+                <label for="" class="form-label">Clave</label>
+                <input v-model="clave" type="password" class="form-control" name="">
+                </div>
+            </div>
+           
+           <!-- </form>-->
+          <button id="bot" v-on:click="validar()">Ingresar</button>
+
+        </div>
+
+
+
+
+
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+   <script src="https://unpkg.com/vue@3/dist/vue.global.js">
+   </script>
+    <script src="../js/login.js"></script>
+    <script>
+    sessionStorage.setItem('loggedIn', 'true');
+    </script>
+    
+</body>
+
+   
+
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Administración de productos</title>
+    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../assets/favicon-32x32.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@600&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/6da7673045.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navPrincipal">
+            <div class="navBrand">
+                <a href="../index.html"><img src="../assets/logo.png" alt="Logo de la empresa" /></a>
+            </div>
+            <div class="navTitle">
+                <p>EcoTienda</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./catalogo.html">Catalogo</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- !MAIN -->
+
+    <main>
+
+        <section>
+            <div id="app" class="container">
+                <h1>Administrar catálogo de productos</h1>
+                <br>
+                <a  class="btn btn-nuevo" href="producto_nuevo.html">Ingrese un nuevo producto</a>
+                <br><br>
+                <div v-if="error">
+                    <p>Lo sentimos , ........</p>
+                </div>
+                <div v-else>
+                    <section v-if="cargando">
+                        <div class="spinner-border"></div>
+                        <p>Cargando .....</p>
+                    </section>
+                    <section v-else>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Imagen</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Stock</th>
+                                        <th scope="col">Descripcion</th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class=""  v-for="producto in productos">
+                                        <td scope="row">{{producto.id}}</td>
+                                        <td>{{producto.nombre}}</td>
+                                        <td>
+                                            <img width="70"  :src="producto.imagen" :alt="producto.nombre">
+                                        </td>
+                                        <td>{{producto.precio}}</td>
+                                        <td>{{producto.stock}}</td>
+                                        <td>{{producto.descripcion}}</td>
+                                        <td>
+                                    <button type="button" class="btn btn-eliminar" v-on:click="eliminar(producto.id)"> Eliminar </button>
+                                    <br>
+                                    <br>
+                                    <a class="btn btn-editar" :href="'producto_update.html?id='+ producto.id"> Editar </a>
+                                    <br>
+                                    <br>
+                                  
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+        </section>
+
+        <div class="wspBtn"><a href="https://web.whatsapp.com/" target="_blank"><img src="../assets/WhatsApp.svg.png"
+                    alt=""></a></div>
+
+    </main>
+
+    <style>
+        .btn-nuevo {
+            color:aliceblue;
+            background-color:#22577a
+        }
+
+        .btn-editar {
+            color: #c7f9cc;
+            background-color:#57cc99
+        }
+
+        .btn-eliminar {
+            color: antiquewhite;
+            background-color:#853333
+        }
+    </style>
+
+    <!-- ! Footer -->
+
+    <footer>
+        <ul>
+            <li>
+                <a target="_blank" href="https://www.facebook.com/ecologiaverde/?locale=es_LA"><i
+                        class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li>
+                <a target="_blank"
+                    href="https://twitter.com/ecologiaverde?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i
+                        class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li>
+                <a target="_blank" href="https://theecologist.org/"><i class="fa-solid fa-newspaper"></i></a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.youtube.com/@EcologiaVerde"><i
+                        class="fa-brands fa-youtube"></i></a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- <script src="../js/catalogo.js"></script> -->
+
+    <!--Link de Bootstrap-->
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js">
+  </script>  
+
+  <script src="../js/productos.js"></script>
+
+</body>
+
+</html>
